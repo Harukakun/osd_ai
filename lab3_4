@@ -1,0 +1,14 @@
+import json
+
+with open('C:/Users/Asus/Documents/open-ml-course/periodic_table.json', 'r', encoding="utf-8") as f:
+    data = json.load(f)
+with open('import_file_3.txt', 'r') as f:
+    strings = f.read()
+    
+for i in range(len(strings)):
+    if ((strings[i].isupper() == True) and (strings[i+1].isupper() == False)):
+        print(data[strings[i] + strings[i+1]],end="")
+    elif (strings[i].isupper() == True) and (strings[i+1].isupper() == True):
+        print(data[strings[i]], end="")
+    elif (strings[i].isupper() == True) and (strings[i+1].isupper() == True):
+        print(data[strings[i]], end="")
